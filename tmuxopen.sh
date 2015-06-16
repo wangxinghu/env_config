@@ -15,8 +15,8 @@ if [ $? != 0 ]; then
     $cmd send-keys -t $session 'cd ~/st/sourcecode/' C-m
     $cmd neww -n github -t $session
     $cmd send-keys -t $session 'cd ~/st/github/' C-m
-    $cmd neww -n farm -t $session
-    $cmd send-keys -t $session 'cd ~/work/farm/' C-m
+    $cmd neww -n work -t $session
+    $cmd send-keys -t $session 'cd ~/work/' C-m
     $cmd neww -n log -t $session
     $cmd send-keys -t $session 'tail -f ~/work/farm/log/ffs/ffsserverwf.log' C-m
     $cmd splitw -h -p 50 -t $session

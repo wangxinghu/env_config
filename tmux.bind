@@ -1,0 +1,108 @@
+bind-key        C-c new-session
+bind-key        C-f command-prompt -p find-session "switch-client -t %%"
+bind-key -r     C-h select-window -t :-
+bind-key -r     Tab select-window -t :-
+bind-key -r     C-l select-window -t :+
+bind-key -n     C-l send-keys C-l ; run-shell "tmux clear-history"
+bind-key      Enter copy-mode
+bind-key        C-o rotate-window
+bind-key        C-z send-prefix -2
+bind-key      Space last-window
+bind-key          ! break-pane
+bind-key          " split-window -h -c #{pane_current_path}
+bind-key          # list-buffers
+bind-key          $ command-prompt -I #S "rename-session '%%'"
+bind-key          % split-window -v -c #{pane_current_path}
+bind-key          ' command-prompt -p index "select-window -t ':%%'"
+bind-key          ( switch-client -p
+bind-key          ) switch-client -n
+bind-key          + run-shell "cut -c3- ~/.tmux.conf | sh -s maximize_pane"
+bind-key          , command-prompt -I #W "rename-window '%%'"
+bind-key          - split-window -v
+bind-key          . command-prompt "move-window -t '%%'"
+bind-key          0 select-window -t :0
+bind-key          1 select-window -t :1
+bind-key          2 select-window -t :2
+bind-key          3 select-window -t :3
+bind-key          4 select-window -t :4
+bind-key          5 select-window -t :5
+bind-key          6 select-window -t :6
+bind-key          7 select-window -t :7
+bind-key          9 select-window -t :9
+bind-key          : command-prompt
+bind-key          ; last-pane
+bind-key          < swap-pane -U
+bind-key          = choose-buffer
+bind-key          > swap-pane -D
+bind-key          ? list-keys
+bind-key          D choose-client
+bind-key -r       H resize-pane -L 5
+bind-key -r       J resize-pane -D 5
+bind-key -r       K resize-pane -U 5
+bind-key -r       L resize-pane -R 5
+bind-key          P choose-buffer
+bind-key          [ copy-mode
+bind-key          ] paste-buffer
+bind-key          _ split-window -h -c #{pane_current_path}
+bind-key          b list-buffers
+bind-key          c new-window
+bind-key          e new-window -n ~/.tmux.conf "${EDITOR:-vim} ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display "~/.tmux.conf sourced""
+bind-key          f command-prompt "find-window '%%'"
+bind-key          h select-pane -L
+bind-key          i display-message
+bind-key          j select-pane -D
+bind-key          k select-pane -U
+bind-key          l select-pane -R
+bind-key          m run-shell "cut -c3- ~/.tmux.conf | sh -s toggle_mouse"
+bind-key          n send-keys " ~/tmux-panes -v" C-m
+bind-key          o select-pane -t :.+
+bind-key          p paste-buffer
+bind-key          q display-panes
+bind-key          P choose-buffer
+bind-key          [ copy-mode
+bind-key          ] paste-buffer
+bind-key          _ split-window -h -c #{pane_current_path}
+bind-key          b list-buffers
+bind-key          c new-window
+bind-key          d detach-client
+bind-key          e new-window -n ~/.tmux.conf "${EDITOR:-vim} ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display "~/.tmux.conf sourced""
+bind-key          f command-prompt "find-window '%%'"
+bind-key          h select-pane -L
+bind-key          i display-message
+bind-key          j select-pane -D
+bind-key          l select-pane -R
+bind-key          m run-shell "cut -c3- ~/.tmux.conf | sh -s toggle_mouse"
+bind-key          n send-keys " ~/tmux-panes -v" C-m
+bind-key          o select-pane -t :.+
+bind-key          p paste-buffer
+bind-key          q display-panes
+bind-key          s choose-tree
+bind-key          t clock-mode
+bind-key          v send-keys " ~/tmux-panes -h" C-m
+bind-key          w choose-window
+bind-key          x confirm-before -p "kill-pane #P? (y/n)" kill-pane
+bind-key          z resize-pane -Z
+bind-key          { swap-pane -U
+bind-key          | split-window -h
+bind-key          } swap-pane -D
+bind-key      PPage copy-mode -u
+bind-key         Up new-window -d -n tmp ; swap-pane -s tmp.1 ; select-window -t tmp
+bind-key       Down last-window ; swap-pane -s tmp.1 ; kill-window -t tmp
+bind-key -r    Left select-pane -L
+bind-key -r   Right select-pane -R
+bind-key        M-1 select-layout even-horizontal
+bind-key        M-2 select-layout even-vertical
+bind-key        M-3 select-layout main-horizontal
+bind-key        M-4 select-layout main-vertical
+bind-key        M-5 select-layout tiled
+bind-key        M-n next-window -a
+bind-key        M-o rotate-window -D
+bind-key        M-p previous-window -a
+bind-key -r    M-Up resize-pane -U 5
+bind-key -r  M-Down resize-pane -D 5
+bind-key -r  M-Left resize-pane -L 5
+bind-key -r M-Right resize-pane -R 5
+bind-key -r    C-Up resize-pane -U
+bind-key -r  C-Down resize-pane -D
+bind-key -r  C-Left resize-pane -L
+bind-key -r C-Right resize-pane -R
