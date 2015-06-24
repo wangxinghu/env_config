@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+     <key>Label</key>
+     <string>php</string>
+     <key>ProgramArguments</key>
+     <array>
+         <string>/usr/sbin/php-fpm</string>
+         <string>-c</string>
+         <string>/usr/local/etc/php/5.3/php.ini</string>
+         <string>-y</string>
+         <string>/usr/local/etc/php/5.3/php-fpm.conf</string>
+     </array>
+     <key>KeepAlive</key>
+     <false/>
+     <key>RunAtLoad</key>
+     <true/>
+     <key>StandardErrorPath</key>
+     <string>/tmp/php.err</string>
+     <key>StandardOutPath</key>
+     <string>/tmp/php.out</string>
+</dict>
+</plist>
