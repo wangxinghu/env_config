@@ -14,6 +14,8 @@ alias 'onlinecn'='/Users/wangxinghu/work/bak/onlinecn.sh'
 alias 'ctags'='/usr/local/Cellar/ctags/5.8/bin/ctags'
 alias 'vi'='/usr/local/bin/vim'
 alias 'vim'='/usr/local/bin/vim'
+alias 'webstart'='/Users/wangxinghu/st/github/mygit/env_config/webserv.sh'
+alias 'tmuxopen'='/Users/wangxinghu/st/github/mygit/env_config/tmuxopen.sh'
 alias 'gitphp'=git_status_check_php
 git_status_check_php() {
     git status | grep 'php$' | awk '{if($1 ~ /php$/) print "php -l", $1; else print "php -l", $2}' | bash
