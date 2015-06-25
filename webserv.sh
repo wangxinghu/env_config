@@ -1,42 +1,42 @@
 #!/bin/bash
 nginx_start() {
-    /usr/local/bin/nginx -c /usr/local/etc/nginx/nginx.conf & #|| echo -n " nginx already running"
+    nginx -c /usr/local/etc/nginx/nginx.conf & #|| echo -n " nginx already running"
 }
 nginx_stop() {
     nginx_pid=/Users/wangxinghu/work/farm/log/nginx/nginx.pid
     kill -QUIT `cat $nginx_pid` || echo -n " nginx not running"
 }
 php_start() {
-    /usr/sbin/php-fpm -c /usr/local/etc/php/5.3/php.ini -y /usr/local/etc/php/5.3/php-fpm.conf & #|| echo -n " php-fpm already running"
+    php-fpm -c /usr/local/etc/php/5.3/php.ini -y /usr/local/etc/php/5.3/php-fpm.conf & #|| echo -n " php-fpm already running"
 }
 php_stop() {
     php_pid=/Users/wangxinghu/work/farm/log/php/php-fpm.pid
     kill -QUIT `cat $php_pid` || echo -n " php-fpm not running"
 }
 mysql_start() {
-    /usr/local/bin/mysqld_safe --user=root & #|| echo -n "mysql already runnig"
+    mysqld_safe --user=root & #|| echo -n "mysql already runnig"
 }
 mysql_stop() {
     mysql_pid=/Users/wangxinghu/work/farm/log/mysql/mysql.pid
     #kill -9 `cat $mysql_pid` || echo -n " mysql not running"
-    /usr/local/bin/mysqladmin -h127.0.0.1 -uroot shutdown
+    mysqladmin -h127.0.0.1 -uroot shutdown
 }
 mongo_start() {
-    /usr/local/bin/mongod -f /usr/local/etc/mongod.conf & #|| echo -n "mongo already running"
+    mongod -f /usr/local/etc/mongod.conf & #|| echo -n "mongo already running"
 }
 mongo_stop() {
     mongo_pid=/Users/wangxinghu/work/farm/log/mongo/mongo.pid
     kill -9 `cat $mongo_pid` || echo -n " mongo not running"
 }
 memcache_start() {
-    /usr/local/bin/memcached -d -m 2048 -u nobody -l 0.0.0.0 -c 10240 -f 1.33 -n 48 -t 4 -p 11211 -P /Users/wangxinghu/work/farm/log/memcached/memcached.pid & #|| echo -n " memcache already running"
+    memcached -d -m 2048 -u nobody -l 0.0.0.0 -c 10240 -f 1.33 -n 48 -t 4 -p 11211 -P /Users/wangxinghu/work/farm/log/memcached/memcached.pid & #|| echo -n " memcache already running"
 }
 memcache_stop() {
     memcache_pid=/Users/wangxinghu/work/farm/log/memcached/memcached.pid
     kill -9 `cat $memcache_pid` || echo -n " memcache not running"
 }
 redis_start() {
-    /usr/local/bin/redis-server /usr/local/etc/redis.conf & #|| echo -n " redis already running"
+    redis-server /usr/local/etc/redis.conf & #|| echo -n " redis already running"
 }
 redis_stop() {
     redis_pid=/Users/wangxinghu/work/farm/log/redis/redis.pid
