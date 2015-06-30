@@ -19,7 +19,7 @@ alias 'tmuxopen'='/Users/wangxinghu/st/github/mygit/env_config/tmuxopen.sh'
 alias 'gitphp'=git_status_check_php
 alias 'phpd'='php -dxdebug.remote_autostart=1 -dxdebug.remote_port=8989'
 git_status_check_php() {
-    git status | grep 'php$' | awk '{if($1 ~ /php$/) print "php -l", $1; else print "php -l", $2}' | bash
+    git status | grep 'php$' | awk -F ':' '{if($1 ~ /php$/) print "php -l", $1; else print "php -l", $2}' | bash
 }
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
