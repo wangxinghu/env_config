@@ -7,7 +7,7 @@ alias vi='vim'
 alias histg='history | grep '
 alias ..='cd ..'
 alias ...='cd ../..'
-alias psg = 'ps aux | grep '
+alias psg='ps aux | grep '
 alias listen='lsof -P -i -n'
 alias port='netstat -tulanp'
 extract() {
