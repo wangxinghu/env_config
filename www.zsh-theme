@@ -12,8 +12,8 @@
 # Also borrowing from http://stevelosh.com/blog/2010/02/my-extravagant-zsh-prompt/
 
 function prompt_char {
-  git branch >/dev/null 2>/dev/null && echo "±" && return
-  echo '○'
+  git branch >/dev/null 2>/dev/null && echo " ± " && return
+  echo '○ '
 }
 
 function box_name {
