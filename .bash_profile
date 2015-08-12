@@ -12,6 +12,8 @@ alias gci='git commit'
 alias gb='git branch'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias 'gitmg'='git merge --no-commit --no-ff -Xignore-all-space'
+alias 'gitpick'='git cherry-pick --no-commit --no-ff -Xignore-all-space'
 alias histg='history | grep '
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -41,7 +43,6 @@ extract() {
 export CLICOLOR=1
 export LSCOLORS=gxfxaxdxcxegedabagacad
 export GOPATH='/Users/wangxinghu/work/farm/async_service'
-alias 'gitmg'='git merge --no-commit --no-ff -Xignore-all-space'
 alias 'testvm'='/Users/wangxinghu/work/bak/test.sh'
 alias 'testflight'='/Users/wangxinghu/work/bak/testflight.sh'
 alias 'als'='/Users/wangxinghu/work/bak/als.sh'
